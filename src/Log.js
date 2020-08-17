@@ -65,7 +65,7 @@ class Log extends React.Component {
                   })
                     .then( response => response.json() )
                     .then( data => {
-                    const workouts = this.state.workouts;
+                    const workouts = [];
                     const logs = data.logs;
                     logs.forEach( (val) => workouts.push(val) );
                     this.setState({workouts: workouts});
