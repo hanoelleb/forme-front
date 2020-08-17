@@ -8,7 +8,8 @@ class Log extends React.Component {
         this.state = ({open_form: false, 
                           length: 0, 
                           description: '',
-	                  workouts: []
+	                  workouts: [],
+		          counter: 0
                      });
     }
 
@@ -16,7 +17,6 @@ class Log extends React.Component {
         const reqUrl = 'http://hanoelleb-forme.herokuapp.com/api/exercises/'
                     + this.props.id + '/?token=' + this.props.token;
 
-	console.log(reqUrl);
 	fetch(reqUrl,
              {
                method: 'GET',
@@ -37,23 +37,40 @@ class Log extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
+
 	const workout = { length: this.state.length, 
                             description: this.state.description };
 	const reqUrl = 'http://hanoelleb-forme.herokuapp.com/api/exercises/'
-                    + this.props.id + '/create' + '/?token=' 
+                    + this.props.id + '/create' + '?token=' 
 		    + this.props.token;
+        console.log(reqUrl);
+	console.log(workout);
 
 	fetch(reqUrl,
              {
                method: 'POST',
-               mode: 'cors',
-               headers: {'Content-Type': 'application/x-www-form-urlencoded',
-	                  'token': this.props.token },
-               token: this.props.token,
+               headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                body: new URLSearchParams(workout),
                json: true
              })
-             .then( response => console.log(response))
+             .then( response => { 
+		  const reqUrl2 = 'http://hanoelleb-forme.herokuapp.com/api'
+			     + '/exercises/' + this.props.id 
+			     + '/?token=' + this.props.token;
+
+                  return fetch(reqUrl2,
+                  {
+                    method: 'GET',
+                    json: true
+                  })
+                    .then( response => response.json() )
+                    .then( data => {
+                    const workouts = this.state.workouts;
+                    const logs = data.logs;
+                    logs.forEach( (val) => workouts.push(val) );
+                    this.setState({workouts: workouts});
+                  });
+	     });
     }
 
     renderLog(workout) {
