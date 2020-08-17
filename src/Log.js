@@ -14,7 +14,7 @@ class Log extends React.Component {
     }
 
     componentDidMount() {
-        const reqUrl = 'http://hanoelleb-forme.herokuapp.com/api/exercises/'
+        const reqUrl = 'https://hanoelleb-forme.herokuapp.com/api/exercises/'
                     + this.props.id + '/?token=' + this.props.token;
 
 	fetch(reqUrl,
@@ -54,7 +54,7 @@ class Log extends React.Component {
                json: true
              })
              .then( response => { 
-		  const reqUrl2 = 'http://hanoelleb-forme.herokuapp.com/api'
+		  const reqUrl2 = 'https://hanoelleb-forme.herokuapp.com/api'
 			     + '/exercises/' + this.props.id 
 			     + '/?token=' + this.props.token;
 

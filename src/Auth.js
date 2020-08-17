@@ -41,7 +41,7 @@ class Login extends React.Component {
 	event.preventDefault();
 	const credentials = { name: this.state.name, 
 		                  password: this.state.password };
-        fetch('http://hanoelleb-forme.herokuapp.com/api/auth/login',
+        fetch('https://hanoelleb-forme.herokuapp.com/api/auth/login',
             { 
                 method: 'POST',
 		headers: {'Content-Type': 'application/x-www-form-urlencoded'},
@@ -84,7 +84,7 @@ class Register extends React.Component {
         const credentials = { name: this.state.name,
                                   password: this.state.password,
 	                          email: this.state.email };
-        fetch('http://hanoelleb-forme.herokuapp.com/api/auth/register',
+        fetch('https://hanoelleb-forme.herokuapp.com/api/auth/register',
             {
                 method: 'POST',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
