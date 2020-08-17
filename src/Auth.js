@@ -17,7 +17,7 @@ class Auth extends React.Component {
 		    Register
 		</button>
 
-		{ this.state.menuStatus == 0 ? <Login /> : < Register/> }
+		{ this.state.menuStatus === 0 ? <Login /> : < Register/> }
             </div>
 	)
     }
@@ -64,12 +64,42 @@ class Login extends React.Component {
 }
 
 class Register extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = ({name: "", password: "", email: ""});
+    }
+
+    handleChange(event) {
+        this.setState({ [event.target.name] : event.target.value });
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        const credentials = { name: this.state.name,
+                                  password: this.state.password,
+	                          email: this.state.email };
+        fetch('http://hanoelleb-forme.herokuapp.com/api/auth/register',
+            {
+                method: 'POST',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body: new URLSearchParams(credentials),
+                json: true
+            })
+             .then( response => response.json())
+             .then( data => console.log(data));
+    }
+
     render() {
        return (
-         <form>
-             <input type='text' placeholder='name' />
-             <input type='email' placeholder='email' />
-             <input type='password' placeholder='password' />
+         <form onSubmit={this.handleSubmit}>
+             <input type='text' name='name' onChange={this.handleChange} 
+	           placeholder='name' />
+             <input type='email' name='email' onChange={this.handleChange}  
+	           placeholder='email'/>
+             <input type='password' name='password' 
+	         onChange={this.handleChange} placeholder='password' />
              <input type='submit' value='Create Account' />
          </form>
        )
