@@ -50,7 +50,6 @@ class Login extends React.Component {
             })
 	     .then( response => response.json())
 	     .then( data => {
-		 console.log(data.token);
                  this.props.handler(data.token, data.id);
 	     });
     }
@@ -94,7 +93,6 @@ class Register extends React.Component {
             })
              .then( response => response.json())
              .then( data => {
-                 console.log(data.token)
                  this.props.handler(data.token, data.id);
 	     });
     }
