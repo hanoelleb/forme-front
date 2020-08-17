@@ -75,7 +75,11 @@ class Log extends React.Component {
 
     renderLog(workout) {
 	return (
-            <div>{workout.length} {workout.description}</div>
+            <tr>
+		<td>{workout.date}</td>
+		<td>{workout.length}</td>
+		<td>{workout.description}</td>
+            </tr>
 	)
     }
 
@@ -83,7 +87,19 @@ class Log extends React.Component {
         return (
 	    <div>
                 <h2>Log</h2>
+		<table>
+		<thead>
+		    <tr>
+		        <th>Date</th>
+		        <th>Length</th>
+		        <th>Description</th>
+		    </tr>
+		</thead>
+		<tbody>
 		{ this.state.workouts.map(workout => this.renderLog(workout))}
+		</tbody>
+		</table>
+
 		{ !this.state.open_form ?
 		<button onClick={()=>this.setState({open_form: true})}>
                     +Workout
