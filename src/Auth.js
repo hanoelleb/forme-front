@@ -17,7 +17,9 @@ class Auth extends React.Component {
 		    Register
 		</button>
 
-		{ this.state.menuStatus === 0 ? <Login /> : < Register/> }
+		{ this.state.menuStatus === 0 ? 
+		    <Login handler={this.props.handler} /> : 
+                    < Register handler={this.props.handler} /> }
             </div>
 	)
     }
@@ -47,7 +49,10 @@ class Login extends React.Component {
                 json: true
             })
 	     .then( response => response.json())
-	     .then( data => console.log(data));
+	     .then( data => {
+		 console.log(data.token);
+                 this.props.handler(data.token, data.id);
+	     });
     }
 
     render() {
@@ -88,7 +93,10 @@ class Register extends React.Component {
                 json: true
             })
              .then( response => response.json())
-             .then( data => console.log(data));
+             .then( data => {
+                 console.log(data.token)
+                 this.props.handler(data.token, data.id);
+	     });
     }
 
     render() {
