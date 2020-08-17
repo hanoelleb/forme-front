@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/forme-front/static/css/main.a30b462a.chunk.css",
-    "main.js": "/forme-front/static/js/main.ae16281c.chunk.js",
-    "main.js.map": "/forme-front/static/js/main.ae16281c.chunk.js.map",
+    "main.js": "/forme-front/static/js/main.b62861dd.chunk.js",
+    "main.js.map": "/forme-front/static/js/main.b62861dd.chunk.js.map",
     "runtime-main.js": "/forme-front/static/js/runtime-main.ee6596db.js",
     "runtime-main.js.map": "/forme-front/static/js/runtime-main.ee6596db.js.map",
     "static/js/2.8b9feadb.chunk.js": "/forme-front/static/js/2.8b9feadb.chunk.js",
     "static/js/2.8b9feadb.chunk.js.map": "/forme-front/static/js/2.8b9feadb.chunk.js.map",
     "index.html": "/forme-front/index.html",
-    "precache-manifest.54345164c9785bfc61e28c3d7fb9be91.js": "/forme-front/precache-manifest.54345164c9785bfc61e28c3d7fb9be91.js",
+    "precache-manifest.76610c9d9f1ea49e0d7f15b63860f375.js": "/forme-front/precache-manifest.76610c9d9f1ea49e0d7f15b63860f375.js",
     "service-worker.js": "/forme-front/service-worker.js",
     "static/css/main.a30b462a.chunk.css.map": "/forme-front/static/css/main.a30b462a.chunk.css.map",
     "static/js/2.8b9feadb.chunk.js.LICENSE.txt": "/forme-front/static/js/2.8b9feadb.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.ee6596db.js",
     "static/js/2.8b9feadb.chunk.js",
     "static/css/main.a30b462a.chunk.css",
-    "static/js/main.ae16281c.chunk.js"
+    "static/js/main.b62861dd.chunk.js"
   ]
 }

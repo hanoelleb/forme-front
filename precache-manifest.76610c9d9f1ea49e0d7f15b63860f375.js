@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8d8dbbca19a9cdba14077135fec4412a",
+    "revision": "c335657ba71d1e86463d30f39232a90a",
     "url": "/forme-front/index.html"
   },
   {
-    "revision": "d2daffef8025b43372db",
+    "revision": "64868d01e3cd78c8248d",
     "url": "/forme-front/static/css/main.a30b462a.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/forme-front/static/js/2.8b9feadb.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d2daffef8025b43372db",
-    "url": "/forme-front/static/js/main.ae16281c.chunk.js"
+    "revision": "64868d01e3cd78c8248d",
+    "url": "/forme-front/static/js/main.b62861dd.chunk.js"
   },
   {
     "revision": "5ed3ee61a48fd28f7767",
