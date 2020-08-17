@@ -24,6 +24,7 @@ class App extends React.Component {
    return (
     <div className="App">
       <header className="App-header">
+	  <h2>Forme</h2>
 	  { this.state.token === '' ? < Auth handler={this.tokenHandler} /> 
             : <div>
                   <button onClick={this.logout}>Logout</button>
